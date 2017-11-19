@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CatalogoOptativo</string>
+    <string name="hint_edt_username">Contraseña</string>
+    <string name="hint_edt_password">Nombre de usuario</string>
+    <string name="title_activity_catalogo">CatalogoActivity</string>
+    <string name="title_activity_ver_oferta">VerOfertaActivity</string>
+</resources>
