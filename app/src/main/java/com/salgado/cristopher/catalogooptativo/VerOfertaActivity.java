@@ -104,19 +104,20 @@ public class VerOfertaActivity extends AppCompatActivity {
                 AlertDialog avisioCompra = new AlertDialog.Builder(VerOfertaActivity.this).create();
                 avisioCompra.setTitle("Aviso");
                 avisioCompra.setMessage("La compra se realizo con exito \n¿Desea seguir comprando?");
-                avisioCompra.setButton(DialogInterface.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() {
+                avisioCompra.setButton(DialogInterface.BUTTON_NEGATIVE, "Ver mis compras", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(VerOfertaActivity.this, CatalogoActivity.class);
+                        Intent intent = new Intent(VerOfertaActivity.this, MisComprasActivity.class);
                         startActivity(intent);
                     }
                 });
-                avisioCompra.setButton(DialogInterface.BUTTON_POSITIVE, "Si", new DialogInterface.OnClickListener() {
+                avisioCompra.setButton(DialogInterface.BUTTON_POSITIVE, "Seguir comprando", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         VerOfertaActivity.this.finish();
                     }
                 });
+                avisioCompra.show();
             }
         });
         alertDialog.show();
