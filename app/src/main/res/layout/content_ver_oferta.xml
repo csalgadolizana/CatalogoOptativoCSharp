@@ -104,6 +104,14 @@
                 android:text="Comprar" />
 
         </LinearLayout>
+        <Button
+            android:id="@+id/btnVerMisCompras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:onClick="btnVerMisComprasClick"
+            android:text="Ver mis compras" />
 
     </LinearLayout>
 

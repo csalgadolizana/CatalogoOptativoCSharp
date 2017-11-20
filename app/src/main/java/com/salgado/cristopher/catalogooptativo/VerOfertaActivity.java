@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,20 +49,10 @@ public class VerOfertaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_oferta);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        Button btnMisCompras = (Button) findViewById(R.id.btnVerMisCompras);
 
         idproducto = Integer.parseInt(getIntent().getStringExtra("id"));
-//        ruta = getIntent().getStringExtra("ruta");
         precio = Integer.parseInt(Catalogo.precios.get(idproducto - 1).toString());
         nombre = Catalogo.titulos.get(idproducto - 1).toString();
         stock = Integer.parseInt(Catalogo.stocks.get(idproducto - 1).toString());
@@ -76,7 +67,7 @@ public class VerOfertaActivity extends AppCompatActivity {
         tvTit.setText(nombre);
         tvDescr.setText("\n\nPrecio : " + precio + "\n" + "Cantidad disponible : " + stock);
         imageView = (ImageView) findViewById(R.id.image_view);
-        ruta = "http://192.168.1.37:8080/WebServiceSangucho-op-C-/" + ruta;
+        ruta = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/" + ruta;
         Log.d(" ----> Resp -> ", ruta);
         SegundoPlano segundoPlano = new SegundoPlano();
         segundoPlano.execute();
@@ -116,7 +107,7 @@ public class VerOfertaActivity extends AppCompatActivity {
                 avisioCompra.setButton(DialogInterface.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(VerOfertaActivity.this,CatalogoActivity.class);
+                        Intent intent = new Intent(VerOfertaActivity.this, CatalogoActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -131,6 +122,11 @@ public class VerOfertaActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+    public void btnVerMisComprasClick(View view) {
+        Intent intent = new Intent(VerOfertaActivity.this,MisComprasActivity.class);
+        startActivity(intent);
+    }
+
     private class compraProductoSegundoPlano extends AsyncTask<String, String, String> {
 
         @Override
@@ -143,7 +139,7 @@ public class VerOfertaActivity extends AppCompatActivity {
         private void comprar() {
             String NAMESPACE = "http://android.app.services/";
             String METHOD_NAME = "crearCompras";
-            String URL = "http://192.168.1.37:8080/WebServiceSangucho-op-C-/CompraService?WSDL";
+            String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/CompraService?WSDL";
             String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
             try {
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);

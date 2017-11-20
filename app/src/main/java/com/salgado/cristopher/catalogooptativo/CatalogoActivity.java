@@ -134,7 +134,7 @@ public class CatalogoActivity extends AppCompatActivity {
     private void convertir() {
         String NAMESPACE = "http://android.app.services/";
         String METHOD_NAME = "listarCatalogo";
-        String URL = "http://192.168.1.37:8080/WebServiceSangucho-op-C-/CatalogoService?WSDL";
+        String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/CatalogoService?WSDL";
         String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
         try {
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -190,7 +190,7 @@ public class CatalogoActivity extends AppCompatActivity {
             smartImageView = (SmartImageView) viewGroup1.findViewById(R.id.imagen1);
             tvTitulo = (TextView) viewGroup1.findViewById(R.id.tvTitulo);
             tvDesc = (TextView) viewGroup1.findViewById(R.id.tvDesc);
-            String urlFinal = "http://192.168.1.37:8080/WebServiceSangucho-op-C-/" + Catalogo.imagenes.get(position).toString();
+            String urlFinal = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/" + Catalogo.imagenes.get(position).toString();
             Rect rect = new Rect(smartImageView.getLeft(), smartImageView.getTop(), smartImageView.getRight(), smartImageView.getBottom());
             smartImageView.setImageUrl(urlFinal, rect);
             tvTitulo.setText(Catalogo.titulos.get(position).toString());

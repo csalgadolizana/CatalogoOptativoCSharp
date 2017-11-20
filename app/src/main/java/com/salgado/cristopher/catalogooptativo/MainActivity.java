@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     private void convertir() {
         String NAMESPACE = "http://services/";
         String METHOD_NAME = "loginAndroid";
-        String URL = "http://192.168.1.37:8080/WebServiceSangucho-op-C-/LoginService?WSDL";
+        String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/LoginService?WSDL";
         String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
         try {
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
