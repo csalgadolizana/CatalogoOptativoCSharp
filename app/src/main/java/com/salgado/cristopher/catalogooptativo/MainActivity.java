@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(R.string.label_activity_login);
         username = (EditText) findViewById(R.id.edtUsername);
         password = (EditText) findViewById(R.id.edtPassword);
         textView = (TextView) findViewById(R.id.textView);
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     private void convertir() {
         String NAMESPACE = "http://services/";
         String METHOD_NAME = "loginAndroid";
-        String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/LoginService?WSDL";
+        String URL = "http://169.254.195.150:8080/WebServiceSangucho-op-C-/LoginService?WSDL";
         String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
         try {
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);

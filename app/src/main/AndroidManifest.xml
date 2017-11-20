@@ -19,13 +19,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CatalogoActivity"
-            android:label="@string/title_activity_catalogo"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".CatalogoActivity" ></activity>
         <activity
-            android:name=".VerOfertaActivity"
-            android:label="@string/title_activity_ver_oferta"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".VerOfertaActivity" ></activity>
         <activity android:name=".MisComprasActivity"></activity>
     </application>
 

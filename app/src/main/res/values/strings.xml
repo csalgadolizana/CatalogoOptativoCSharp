@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">CatalogoOptativoC#</string>
+    <string name="label_activity_login">Login</string>
+    <string name="label_activity_catalogo">Catalogo</string>
+    <string name="label_activity_producto">Producto</string>
+    <string name="label_activity_mis_compras">Mis Compras</string>
     <string name="hint_edt_username">Contraseña</string>
     <string name="hint_edt_password">Nombre de usuario</string>
     <string name="title_activity_catalogo">CatalogoActivity</string>

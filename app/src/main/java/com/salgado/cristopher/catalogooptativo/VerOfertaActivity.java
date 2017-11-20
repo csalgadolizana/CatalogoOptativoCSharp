@@ -49,6 +49,7 @@ public class VerOfertaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_oferta);
+        setTitle(R.string.label_activity_producto);
 
         Button btnMisCompras = (Button) findViewById(R.id.btnVerMisCompras);
 
@@ -67,7 +68,7 @@ public class VerOfertaActivity extends AppCompatActivity {
         tvTit.setText(nombre);
         tvDescr.setText("\n\nPrecio : " + precio + "\n" + "Cantidad disponible : " + stock);
         imageView = (ImageView) findViewById(R.id.image_view);
-        ruta = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/" + ruta;
+        ruta = "http://169.254.195.150:8080/WebServiceSangucho-op-C-/" + ruta;
         Log.d(" ----> Resp -> ", ruta);
         SegundoPlano segundoPlano = new SegundoPlano();
         segundoPlano.execute();
@@ -140,7 +141,7 @@ public class VerOfertaActivity extends AppCompatActivity {
         private void comprar() {
             String NAMESPACE = "http://android.app.services/";
             String METHOD_NAME = "crearCompras";
-            String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/CompraService?WSDL";
+            String URL = "http://169.254.195.150:8080/WebServiceSangucho-op-C-/CompraService?WSDL";
             String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
             try {
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);

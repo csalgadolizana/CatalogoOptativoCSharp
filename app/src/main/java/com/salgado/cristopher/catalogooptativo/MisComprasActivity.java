@@ -39,6 +39,7 @@ public class MisComprasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         listView = (ListView) findViewById(R.id.listViewMisComprasss);
         setContentView(R.layout.activity_mis_compras);
+        setTitle(R.string.label_activity_mis_compras);
     }
 
     @Override
@@ -76,7 +77,7 @@ public class MisComprasActivity extends AppCompatActivity {
     private void convertir() {
         String NAMESPACE = "http://android.app.services/";
         String METHOD_NAME = "miCatalogo";
-        String URL = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/CatalogoService?WSDL";
+        String URL = "http://169.254.195.150:8080/WebServiceSangucho-op-C-/CatalogoService?WSDL";
         String SOAP_ACTION = NAMESPACE + "" + METHOD_NAME;
         try {
             SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -145,7 +146,7 @@ public class MisComprasActivity extends AppCompatActivity {
             Log.d(" ----> Resp -> ", "getView() 4");
             tvDesc = (TextView) viewGroup1.findViewById(R.id.tvDesc2);
             Log.d(" ----> Resp -> ", "getView() 5");
-            String urlFinal = "http://192.168.1.38:8080/WebServiceSangucho-op-C-/" + imagenes.get(position).toString();
+            String urlFinal = "http://169.254.195.150:8080/WebServiceSangucho-op-C-/" + imagenes.get(position).toString();
             Log.d(" ----> Resp -> ", "getView() 6");
             Rect rect = new Rect(smartImageView.getLeft(), smartImageView.getTop(), smartImageView.getRight(), smartImageView.getBottom());
             Log.d(" ----> Resp -> ", "getView() 7");
